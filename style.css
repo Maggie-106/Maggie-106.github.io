@@ -1,0 +1,127 @@
+:root {
+  --text: #1f2328;
+  --muted: #5b6270;
+  --accent: #b21f2d;        /* UMD red */
+  --rule: #e3e5e8;
+  --bg: #ffffff;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 56px 24px 40px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Intro */
+.intro {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+}
+.photo {
+  width: 210px;
+  height: auto;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 6px;
+}
+.role {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 0;
+}
+.fields span { font-weight: 600; }
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+/* Sections */
+section {
+  padding: 28px 0 8px;
+  border-bottom: 1px solid var(--rule);
+}
+h2 {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.paper { margin-bottom: 22px; }
+h3 {
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 4px;
+}
+h3 a { color: var(--text); border-bottom: 1px solid var(--accent); }
+h3 a:hover { color: var(--accent); text-decoration: none; }
+.meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* Collapsible abstracts */
+details { margin-top: 6px; }
+summary {
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  list-style: none;
+  display: inline-block;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+ "; }
+details[open] summary::before { content: "− "; }
+details p {
+  margin: 8px 0 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--rule);
+  font-size: 0.97rem;
+}
+
+ul.plain { padding-left: 20px; margin-top: 6px; }
+
+
+@media (max-width: 640px) {
+  .page { padding: 32px 16px; }
+  .intro { flex-direction: column; gap: 20px; }
+  .photo { width: 160px; }
+}
