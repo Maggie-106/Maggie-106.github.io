@@ -36,11 +36,19 @@ a:hover { text-decoration: underline; }
   padding-bottom: 32px;
   border-bottom: 1px solid var(--rule);
 }
-.photo {
+.side {
   width: 210px;
+  flex-shrink: 0;
+}
+.photo {
+  width: 100%;
   height: auto;
   border-radius: 6px;
-  flex-shrink: 0;
+}
+.contact {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 h1 {
   font-size: 2.1rem;
@@ -106,5 +114,6 @@ ul.plain { padding-left: 20px; margin-top: 6px; }
 @media (max-width: 640px) {
   .page { padding: 32px 16px; }
   .intro { flex-direction: column; gap: 20px; }
+  .side { width: 100%; }
   .photo { width: 160px; }
 }
