@@ -8,9 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a class="topnav-name" href="#">Mengjia (Maggie) Hu</a>
+      <div class="topnav-links">
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+      </div>
+    </div>
+  </nav>
   <main class="page">
 
     <header class="intro">
@@ -31,7 +40,7 @@
       </div>
     </header>
 
-    <section>
+    <section id="research">
       <h2>Job Market Paper</h2>
       <article class="paper">
         <h3>Foreign Entry, Local Sourcing, and Domestic Welfare: Evidence from Tesla’s Manufacturing in China</h3>
@@ -77,11 +86,11 @@
       </article>
       <article class="paper">
         <h3>Remote Work, Travel Behavior, and Public Transit Adaptation</h3>
-        <p class="meta">with Yixin Yang</p>
+        <p class="meta">with <a href="https://yixinyang-econ.github.io/">Yixin Yang</a></p>
       </article>
     </section>
 
-    <section>
+    <section id="teaching">
       <h2>Teaching</h2>
       <p class="meta">Teaching Assistant, University of Maryland, College Park</p>
       <ul class="plain">
@@ -91,5 +100,11 @@
       </ul>
     </section>
   </main>
+  <script>
+    // Show the name in the top bar only after the main heading scrolls out of view.
+    new IntersectionObserver(([e]) => {
+      document.querySelector('.topnav').classList.toggle('scrolled', !e.isIntersecting);
+    }, { rootMargin: '-50px 0px 0px 0px' }).observe(document.querySelector('h1'));
+  </script>
 </body>
 </html>
